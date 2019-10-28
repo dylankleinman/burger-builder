@@ -9,14 +9,14 @@ const burger = (props) => {
         //console.log(igKey); //Object.keys seperates object into array, with the ingredient as the key (igKey)
         return [...Array(props.ingredients[igKey])].map( //[ , ] new array with 2 elements
             (_, i) => {
-                console.log(igKey, i); //outputs ingredient, index of ingredient(if there are 2 cheese, 
+                //console.log(igKey, i); //outputs ingredient, index of ingredient(if there are 2 cheese, 
                 //it will be cheese 0 cheese 1)
                 return <BurgerIngredient key ={igKey + i} type = {igKey}/>;
             });
     }).reduce((arr, el) => { //flatten array so it is now one array, not an array of arrays
         return arr.concat(el)
     }, []);
-    console.log(transformedIngredients);
+   // console.log(transformedIngredients);
 
     if(transformedIngredients.length === 0){
         transformedIngredients = <p>Please start adding ingredients</p>
